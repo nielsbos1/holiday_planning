@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holiday Planner 2025</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-calendar-alt"></i> Holiday Planner 2025</h1>
+            <p>Plan your perfect year with smart holiday management</p>
+        </header>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <div class="card">
+                    <h3><i class="fas fa-cog"></i> Holiday Entitlement</h3>
+                    <div class="holiday-inputs">
+                        <div class="input-group">
+                            <label for="daysFromLastYear">Days from Last Year</label>
+                            <input type="number" id="daysFromLastYear" min="0" max="50" step="0.5" value="0" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="loyaltyDays">Extra Loyalty Days</label>
+                            <input type="number" id="loyaltyDays" min="0" max="20" step="0.5" value="0" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="regularDays">Regular Holiday Days</label>
+                            <input type="number" id="regularDays" min="0" max="50" step="0.5" value="25" placeholder="25">
+                        </div>
+                        <div class="input-group">
+                            <label for="boughtDays">Bought Days</label>
+                            <input type="number" id="boughtDays" min="0" max="20" step="0.5" value="0" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="bonusDays">Additional Bonus Days</label>
+                            <input type="number" id="bonusDays" min="0" max="20" step="0.5" value="0" placeholder="0">
+                        </div>
+                        <div class="total-summary">
+                            <strong>Total Available: <span id="totalCalculated">25</span> days</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-chart-pie"></i> Overview</h3>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Total Days</span>
+                            <span class="stat-value" id="totalDaysDisplay">25</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Used Days</span>
+                            <span class="stat-value" id="usedDays">0</span>
+                        </div>
+                        <div class="stat-item remaining">
+                            <span class="stat-label">Remaining</span>
+                            <span class="stat-value" id="remainingDays">25</span>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-flag-checkered"></i> Dutch Public Holidays</h3>
+                    <div class="public-holidays" id="publicHolidays">
+                        <!-- Public holidays will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-building"></i> Company Holidays</h3>
+                    <div class="input-group">
+                        <label for="companyHolidayDate">Add Company Holiday</label>
+                        <div class="company-holiday-input">
+                            <input type="date" id="companyHolidayDate" placeholder="Select date">
+                            <input type="text" id="companyHolidayName" placeholder="Holiday name" maxlength="30">
+                            <button class="btn btn-small btn-primary" id="addCompanyHoliday">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="company-holidays" id="companyHolidays">
+                        <!-- Company holidays will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-list"></i> Actions</h3>
+                    <button class="btn btn-secondary" id="clearAll">
+                        <i class="fas fa-trash"></i> Clear All
+                    </button>
+                    <button class="btn btn-primary" id="exportData">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fas fa-layer-group"></i> Scenarios</h3>
+                    <div class="input-group">
+                        <label for="scenarioName">Save Current as Scenario</label>
+                        <div class="scenario-input">
+                            <input type="text" id="scenarioName" placeholder="Enter scenario name" maxlength="50">
+                            <button class="btn btn-small btn-primary" id="saveScenario">
+                                <i class="fas fa-save"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="current-scenario">
+                        <label>Current Scenario:</label>
+                        <span id="currentScenarioName">Default</span>
+                        <button class="btn btn-small btn-secondary" id="resetToDefault" title="Reset to default scenario">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                    </div>
+                    <div class="scenario-file-actions">
+                        <button class="btn btn-small btn-secondary" id="exportScenarios">
+                            <i class="fas fa-download"></i> Export All
+                        </button>
+                        <button class="btn btn-small btn-primary" id="importScenariosBtn">
+                            <i class="fas fa-upload"></i> Import
+                        </button>
+                        <input type="file" id="importScenarios" accept=".json" style="display: none;">
+                    </div>
+                    <div class="scenarios-list" id="scenariosList">
+                        <!-- Saved scenarios will be populated by JavaScript -->
+                    </div>
+                    <div class="scenario-storage-info">
+                        <small>
+                            <i class="fas fa-info-circle"></i>
+                            Scenarios are saved in browser storage. Use "Export All" to create file backups.
+                        </small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-section">
+                <div class="calendar-header">
+                    <button class="btn btn-icon" id="prevYear">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <h2 id="currentYear">2025</h2>
+                    <button class="btn btn-icon" id="nextYear">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar months will be populated by JavaScript -->
+                </div>
+                
+                <div class="calendar-help">
+                    <p><strong>How to select holidays:</strong></p>
+                    <p>• <strong>Left-click</strong> to cycle: No selection → Full day → No selection</p>
+                    <p>• <strong>Right-click</strong> to toggle half days: No selection ↔ Half day</p>
+                    <p>• <strong>Half days</strong> count as 0.5 towards your total</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <span class="legend-color selected"></span>
+                <span>Selected Holiday (Full Day)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color half-day"></span>
+                <span>Selected Holiday (Half Day)</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color public"></span>
+                <span>Public Holiday</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color company"></span>
+                <span>Company Holiday</span>
+            </div>
+            <div class="legend-item">
+                <span class="legend-color weekend"></span>
+                <span>Weekend</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,171 @@
+# Holiday Planning Application .gitignore
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Windows
+*.tmp
+*.temp
+*.log
+*.swp
+*.swo
+*~
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.atom/
+.brackets.json
+
+# Node.js (if adding build tools later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Build and Distribution
+dist/
+build/
+out/
+.cache/
+.parcel-cache/
+
+# Environment and Configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config.local.js
+
+# User Data and Exports
+exports/
+backups/
+user-data/
+*.json.backup
+holiday-plan-*.json
+holiday-scenarios-*.json
+
+# Browser Testing
+.nyc_output/
+coverage/
+*.lcov
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Local development
+local/
+dev/
+test-data/
+
+# Documentation build
+docs/_build/
+
+# Python (if adding Python tools)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Java (if adding Java tools)
+*.class
+*.jar
+*.war
+*.ear
+
+# Deployment
+deploy/
+.deploy/
+
+# Security
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Database files (if adding local storage)
+*.db
+*.sqlite
+*.sqlite3
+
+# Application specific
+# Uncomment if you want to ignore user exports
+# exports/
+# user-scenarios/ 
