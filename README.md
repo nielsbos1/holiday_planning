@@ -5,6 +5,9 @@ A beautiful and intuitive web application to help you plan and manage your holid
 ## Screenshot 📸
 
 ![Holiday Planner Application](screenshots/holiday-planner-main.png)
+![Holiday Planner Application](screenshots/holiday-planner-main-2.png)
+![Holiday Planner Application](screenshots/holiday-planner-main-3.png)
+
 
 *The Holiday Planner interface showing the calendar view, holiday entitlement breakdown, scenario management, and company holidays.*
 
