@@ -168,4 +168,11 @@ deploy/
 # Application specific
 # Uncomment if you want to ignore user exports
 # exports/
-# user-scenarios/ 
+# user-scenarios/
+
+# Screenshots for documentation (keep these)
+!screenshots/
+!screenshots/*.png
+!screenshots/*.jpg
+!screenshots/*.jpeg
+!screenshots/*.gif 

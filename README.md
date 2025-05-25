@@ -2,6 +2,12 @@
 
 A beautiful and intuitive web application to help you plan and manage your holiday days for 2025, with built-in Dutch public holidays.
 
+## Screenshot 📸
+
+![Holiday Planner Application](screenshots/holiday-planner-main.png)
+
+*The Holiday Planner interface showing the calendar view, holiday entitlement breakdown, scenario management, and company holidays.*
+
 ## Features ✨
 
 - **Interactive Calendar**: Click on any day to select it as a holiday
