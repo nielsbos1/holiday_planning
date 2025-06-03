@@ -1,5 +1,5 @@
-// Holiday Planner Application
-class HolidayPlanner {
+// Vacation Days Application
+class VacationDays {
     constructor() {
         this.currentYear = 2025;
         this.holidayDays = {
@@ -403,11 +403,11 @@ class HolidayPlanner {
             scenarios: this.scenarios,
             currentScenario: this.currentScenario
         };
-        localStorage.setItem('holidayPlannerData', JSON.stringify(data));
+        localStorage.setItem('vacationDaysData', JSON.stringify(data));
     }
 
     loadFromStorage() {
-        const saved = localStorage.getItem('holidayPlannerData');
+        const saved = localStorage.getItem('vacationDaysData');
         if (saved) {
             try {
                 const data = JSON.parse(saved);
@@ -817,7 +817,7 @@ class HolidayPlanner {
             scenarios: this.scenarios,
             exportDate: new Date().toISOString(),
             version: '1.0',
-            description: 'Holiday Planner Scenarios Export'
+            description: 'Vacation Days Scenarios Export'
         };
 
         const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
@@ -905,7 +905,7 @@ class HolidayPlanner {
 
 // Initialize the application when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new HolidayPlanner();
+    new VacationDays();
 });
 
 // Add some helpful keyboard shortcuts

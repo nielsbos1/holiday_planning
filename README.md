@@ -1,6 +1,6 @@
-# Holiday Planner 2025 🏖️
+# Vacation Days 2025 🏖️
 
-A beautiful and intuitive web application to help you plan and manage your holiday days for 2025, with built-in Dutch public holidays.
+A beautiful and intuitive web application to help you plan, track, and optimize your vacation days for 2025. Select your days off, see real-time usage, manage scenarios, and make the most of public and company holidays. Easily calculate your remaining days and export your plans for backup or sharing.
 
 ## Screenshot 📸
 
